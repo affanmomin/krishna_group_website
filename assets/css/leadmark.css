@@ -93,17 +93,35 @@ body {
 #loader img {
   width: 100px;
   height: 100px;
-  animation: spin 2s linear infinite; /* Add the spin animation and set the animation duration to 2 seconds */
+  /* animation: spin 2s linear infinite; Add the spin animation and set the animation duration to 2 seconds */
+}
+#loader h1 {
+  color: #000;
+  font-size: 30px; /* Increase the font size to 36 pixels */
+  margin-top: 100px;
+  text-align: center;
+  position: absolute; /* Add position absolute to position the h1 tag relative to the parent element */
+ 
+  left: 50%; /* Position the h1 tag in the center of the parent element */
+  transform: translateX(-50%); /* Shift the h1 tag to the left by 50% of its own width */
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg); /* Set the starting rotation angle to 0 degrees */
-  }
-  100% {
-    transform: rotate(360deg); /* Set the ending rotation angle to 360 degrees (i.e., a full rotation) */
+@media screen and (max-width: 768px) {
+  /* Apply the following styles for screens with a maximum width of 768 pixels (i.e., for mobile views) */
+  #loader h1 {
+    margin-top: 160px; /* Increase the margin-top property to 60 pixels */
+    font-size: 24px; /* Decrease the font size to 24 pixels */
   }
 }
+
+/* @keyframes spin {
+  0% {
+    transform: rotate(0deg); /* Set the starting rotation angle to 0 degrees */
+  /* }
+  100% {
+    transform: rotate(360deg); /* Set the ending rotation angle to 360 degrees (i.e., a full rotation) */
+  /* }
+} */ */ */
 
 
 /* 
@@ -199,8 +217,34 @@ body {
   align-items: center;
   border-radius: 4px;
   padding: 20px;
+ 
   transition: all .3s ease-in;
 }
+
+.card-service{
+  width: 250px;
+  height: 400px;
+  position: relative;
+  background: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  padding: 20px;
+  margin: auto;
+  transition: all .3s ease-in;
+}
+
+@media (max-width: 767px) {
+  .card-bod {
+    padding: 10px;
+  }
+  .card-title {
+    font-size: 20px;
+  }
+}
+
 .card > *{
   padding: 10px;
 }
